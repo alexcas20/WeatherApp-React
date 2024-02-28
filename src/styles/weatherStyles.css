@@ -1,0 +1,46 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #fff;
+
+}
+
+.container strong{
+    font-size: 2.5rem;
+   
+}
+
+.container h1{
+    text-align: center;
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    font-weight: 800;
+}
+
+.form-search{
+    text-align: center;
+    
+} 
+
+.form-search input{
+    width: 500px;
+    padding: 8px;
+    border: currentColor;
+    border-radius: 6px;
+    margin-right: 2px;
+}
+
+.form-search button{
+    color: #fff;
+    padding: 8px;
+    border-radius: 6px;
+    background-color: #051d41;
+    border: currentColor;
+    cursor: pointer;
+}
