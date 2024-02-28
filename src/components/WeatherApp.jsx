@@ -7,7 +7,6 @@ export const WeatherApp = () => {
 
   const [city, setCity] = useState("");
 
-  
   //Weather Date
   const [weatherData, setWeatherData] = useState(null);
 
@@ -17,17 +16,20 @@ export const WeatherApp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+   
 
     if (city.length > 0) fetchWeather();
   };
 
   const fetchWeather = async () => {
     try {
+   
       const response = await fetch(
         `${urlBase}?q=${city}&appid=${API_KEY}&units=metric`
       );
       const data = await response.json();
       setWeatherData(data);
+      setCity('');
     } catch (error) {
       console.error(error);
     }
@@ -50,24 +52,30 @@ export const WeatherApp = () => {
             <div className="card-weather-body">
               <h2>{weatherData.name}</h2>
 
-              <div className="card-weather-body-image">
-                <img
-                  src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
-                />
-               
+              <img
+                src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
+              />
+
+              <div className="card-weather-description">
+                <strong>{weatherData.weather[0].description}</strong>
               </div>
 
-              <span className="weather-description">
-                    <strong>{weatherData.weather[0].description}</strong>
-                </span>
-
-              <span>
-                Temp: <strong>{parseInt(weatherData.main.temp)} ℃ </strong>
+              <span className="temp-princ">
+               <strong>{parseInt(weatherData.main.temp)} ℃ </strong>
               </span>
 
-              {/* <span>
-                Feels: <strong>{parseInt(weatherData.main.feels_like)} ℃ </strong>
-              </span> */}
+              <div className="card-weather-temps">
+                <span>
+                  <i className="fa-solid fa-temperature-arrow-up icon-max"></i>
+                  <strong> {parseInt(weatherData.main.temp_max)} ℃ </strong>
+                </span>
+                <span>
+                  <i className="fa-solid fa-temperature-arrow-down icon-min"></i>
+                  <strong> {parseInt(weatherData.main.temp_min)} ℃ </strong>
+                </span>
+              </div>
+
+            
             </div>
           </article>
         )}
