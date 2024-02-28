@@ -11,10 +11,9 @@ body{
 
 }
 
-.container strong{
-    font-size: 2.5rem;
-   
-}
+
+
+
 
 .container h1{
     text-align: center;
@@ -27,6 +26,11 @@ body{
     text-align: center;
     
 } 
+
+.form-search strong{
+    font-size: 2.5rem;
+   
+}
 
 .form-search input{
     width: 500px;
@@ -44,3 +48,37 @@ body{
     border: currentColor;
     cursor: pointer;
 }
+
+
+/* card */
+
+.card-weather{
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.card-weather h2{
+    text-align: center;
+}
+
+.card-weather-body{
+   text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 400px;
+    background-color: #ffffff6b;
+}
+
+.card-weather-body span{
+    display: block;
+}
+
+.weather-description{
+    font-size: 1.5rem;
+    padding-bottom: 20px;
+    text-transform: capitalize;
+}
+
+
+
